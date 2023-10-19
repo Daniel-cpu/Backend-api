@@ -10,7 +10,8 @@ namespace ApirestPrueba
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de Web API
-
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             // Rutas de Web API
             config.MapHttpAttributeRoutes();
 
